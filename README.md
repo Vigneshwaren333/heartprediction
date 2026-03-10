@@ -1,21 +1,13 @@
 # ❤️ Heart Disease Risk Prediction System
 
-An AI-powered web application that predicts the risk of heart disease using machine learning. Built for the Healthcare Hackathon Challenge.
+An AI-powered web application that predicts the risk of heart disease using machine learning and clinical data analysis.
 
 ## 🎯 Features
 
 - **Real-time Predictions**: Get instant heart disease risk assessment
 - **Model Insights**: Understand feature importance and model performance
 - **Interactive Dashboard**: Explore data visualizations and patterns
-- **Medical-Grade Analysis**: Built with scikit-learn Random Forest classifier
-
-## 🏥 Challenges Addressed
-
-✅ Challenge 1: Data Analysis & Visualization  
-✅ Challenge 2: Predictive Modeling  
-✅ Challenge 3: Data Cleaning & Feature Engineering  
-✅ Challenge 4: AI/ML Solution for Real-World Problem  
-✅ Challenge 5: Data Storytelling  
+- **Medical-Grade Analysis**: Built with scikit-learn Random Forest classifier  
 
 ## 📊 Model Performance
 
@@ -121,12 +113,12 @@ heart-disease-predictor/
 
 ## 📋 Requirements
 
-- pandas==2.0.3
-- numpy==1.24.3
-- scikit-learn==1.3.0
-- matplotlib==3.7.2
-- seaborn==0.12.2
-- streamlit==1.28.1
+- pandas>=2.1.0
+- numpy>=1.26.0
+- scikit-learn>=1.4.0
+- matplotlib>=3.8.0
+- seaborn>=0.13.0
+- streamlit>=1.40.0
 
 ## 🔧 Configuration Files
 
@@ -178,6 +170,64 @@ This application is a **demonstration tool for educational purposes only**. It s
 - **Visualization**: matplotlib, seaborn
 - **Deployment**: Streamlit Cloud (AWS)
 
+## 📝 Input Guide & Normal Values
+
+When using the prediction feature, here's a guide to the inputs with typical healthy values and sample data:
+
+### Input Parameters
+
+| Input | Range | Normal/Healthy | Sample Input | Notes |
+|-------|-------|---|---|---|
+| **Age** | 20-100 years | 45-55 | 52 | Patient age in years |
+| **Gender** | 0, 1 | Both | 1 (Male) | 0=Female, 1=Male |
+| **Chest Pain Type** | 0-3 | 0 | 0 | 0=Typical Angina, 1=Atypical, 2=Non-anginal, 3=Asymptomatic |
+| **Resting BP** | 80-200 mmHg | 120 | 120 | Systolic blood pressure at rest |
+| **Cholesterol** | 100-400 mg/dl | <200 | 180 | Serum cholesterol level |
+| **Fasting Blood Sugar** | 0, 1 | 0 | 0 | 0=<120 mg/dl (Normal), 1=>120 mg/dl (High) |
+| **Resting ECG** | 0-2 | 0 | 0 | 0=Normal, 1=ST abnormality, 2=LV hypertrophy |
+| **Max Heart Rate** | 60-220 bpm | 150-180 | 160 | Maximum heart rate achieved during exercise |
+| **Exercise Angina** | 0, 1 | 0 | 0 | 0=No, 1=Yes (exercise-induced chest pain) |
+| **ST Depression** | 0.0-6.5 | 0.0-1.0 | 0.5 | ST segment depression induced by exercise |
+| **ST Slope** | 0-2 | 1 | 1 | 0=Upsloping, 1=Flat, 2=Downsloping |
+| **Major Vessels** | 0-3 | 0-1 | 0 | Number of major vessels (0-3) colored by fluoroscopy |
+| **Thalassemia** | 0-3 | 0 | 0 | 0=Normal, 1=Fixed, 2=Reversible, 3=Not available |
+
+### Sample Healthy Patient Input
+```
+Age: 45
+Gender: 1 (Male)
+Chest Pain Type: 0 (Typical Angina)
+Resting BP: 120 mmHg
+Cholesterol: 180 mg/dl
+Fasting Blood Sugar: 0 (Normal)
+Resting ECG: 0 (Normal)
+Max Heart Rate: 160 bpm
+Exercise Angina: 0 (No)
+ST Depression: 0.5
+ST Slope: 1 (Flat)
+Major Vessels: 0
+Thalassemia: 0 (Normal)
+```
+**Expected Result**: Low Risk ✅
+
+### Sample At-Risk Patient Input
+```
+Age: 65
+Gender: 1 (Male)
+Chest Pain Type: 2 (Non-anginal Pain)
+Resting BP: 145 mmHg
+Cholesterol: 250 mg/dl
+Fasting Blood Sugar: 1 (High)
+Resting ECG: 2 (LV hypertrophy)
+Max Heart Rate: 120 bpm
+Exercise Angina: 1 (Yes)
+ST Depression: 3.0
+ST Slope: 2 (Downsloping)
+Major Vessels: 2
+Thalassemia: 2 (Reversible)
+```
+**Expected Result**: High Risk ⚠️
+
 ## 📝 How to Use
 
 ### Make a Prediction
@@ -215,7 +265,5 @@ For issues, questions, or suggestions, please open an issue on GitHub.
 This project is open source and available for educational purposes.
 
 ---
-
-**Built for Healthcare Hackathon 2026 | ML & Data Science Challenge**
 
 Last Updated: March 2026
