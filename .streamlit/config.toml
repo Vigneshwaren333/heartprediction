@@ -1,0 +1,17 @@
+[server]
+maxUploadSize = 200
+port = 8501
+
+[client]
+showErrorDetails = true
+toolbarMode = "viewer"
+
+[theme]
+primaryColor = "#e74c3c"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f0f2f6"
+textColor = "#262730"
+font = "sans serif"
+
+[logger]
+level = "info"
