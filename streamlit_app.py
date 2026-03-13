@@ -125,12 +125,13 @@ elif page == "Make Prediction":
         col1, col2 = st.columns(2)
         
         with col1:
+            risk_percentage = probability[1] * 100
             if prediction == 1:
                 st.error("⚠️ HIGH RISK")
-                st.metric("Risk Level", f"{probability[1]*100:.1f}%", "Heart Disease Risk Detected")
+                st.metric("Risk Level", f"{risk_percentage:.1f}%", "Heart Disease Risk Detected")
             else:
                 st.success("✅ LOW RISK")
-                st.metric("Risk Level", f"{probability[0]*100:.1f}%", "No Disease Indication")
+                st.metric("Risk Level", f"{risk_percentage:.1f}%", "No Disease Indication")
         
         with col2:
             # Probability gauge
